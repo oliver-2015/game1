@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>奥特曼生存游戏</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-family: Arial;
+            font-size: 16px;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+        }
+        #shop {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            color: white;
+            display: none;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+        .shop-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .shop-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        生命值: <span id="health">5</span><br>
+        攻击力: <span id="attack">1</span><br>
+        恐龙生命值: <span id="monsterHealth">100</span><br>
+        等级: <span id="level">1</span><br>
+        分数: <span id="score">0</span>
+    </div>
+    <div id="shop">
+        <div class="close-btn" onclick="toggleShop()">X</div>
+        <h2>商城</h2>
+        <div class="shop-item" onclick="buyItem('health')">
+            生命值+3 (花费: 50分)
+        </div>
+        <div class="shop-item" onclick="buyItem('attack')">
+            攻击力+2 (花费: 100分)
+        </div>
+        <div class="shop-item" onclick="buyItem('maxHealth')">
+            最大生命值+2 (花费: 200分)
+        </div>
+        <div class="shop-item" onclick="buyItem('bulletSpeed')">
+            子弹速度提升 (花费: 150分)
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html> 
